@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Descargador de Audio de YouTube</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background-color: #f9f9f9;
+        }
+        .container{
+            max-width: 600px; 
+            margin: auto; 
+            margin-top: 5%;
+            background: #fff; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .principal{
+            max-width: 800px; 
+            margin: auto;
+            margin-top: 5%; 
+            background: #fff; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .footer{
+            position: absolute;
+            bottom: 2%;
+            color: gray;
+        }
+        h1 { text-align: center; }
+        form { margin-top: 20px; }
+        input[type="text"] { 
+            width: 100%; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%; 
+            padding: 10px; 
+            background-color: #28a745; 
+            border: none; 
+            color: white; 
+            font-size: 16px; 
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .flash { 
+            background: #ffdddd; 
+            padding: 10px; 
+            border: 1px solid #f5c6cb; 
+            border-radius: 4px; 
+            margin-bottom: 10px;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Descarga Audio de YouTube</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="flash">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" id="url" name="url" placeholder="Ingresa el enlace del video" required>
+            <input type="submit" value="Descargar Audio">
+        </form>
+    </div>
+    <main class="principal">
+        <h2>Descarga gratis audio de un video</h2>
+        <p>Descarga <b>de manera gratuita</b> audio de un video de youtube. Coloca el link en la casilla anterior, clickea el boton de descarga y selecciona la carpenta donde se descargara el archivo, espera unos segundos y tendras tu audio listo para usarlo!</p>
+    </main>
+    <footer class="footer">
+        <p>Copyright 2025 | AlpaDev</p>
+    </footer>
+</body>
+</html>
